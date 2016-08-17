@@ -2,7 +2,12 @@
 #include<stdlib.h>
 #include<time.h>
 #include"list.h"
-
+#include"fatal.h"
+struct Node
+{
+    ElementType Element;
+    Position Next;
+};
 void main()
 {
     List L;
@@ -20,7 +25,7 @@ void main()
        TemCell->Element = rand()%100+1;
        TemCell->Next = NULL;
        CuruntP =  TemCell;
-       printf("The element is %d", CuruntP->Element);
+       printf("The element is %d\n", CuruntP->Element);
     }
 }
 

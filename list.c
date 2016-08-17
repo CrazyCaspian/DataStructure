@@ -14,7 +14,7 @@ List MakeEmpty()
     List L;
     L = malloc(sizeof(struct Node));
     if(L == NULL)
-        FataError("Can't create a List");
+        FatalError("Can't create a List");
     return L;
 }
 /*返回一个空表*/
@@ -73,9 +73,9 @@ void Insert(ElementType X, List L, Position P)
 {
     Position TmpCell;
 
-    TmpCell = malloc(sizeof(strut Node));
+    TmpCell = malloc(sizeof(struct Node));
     if(TmpCell == NULL)
-        FataError("Out of space!!");
+        FatalError("Out of space!!");
 
     TmpCell->Element = X;
     TmpCell->Next =  P->Next;
