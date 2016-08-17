@@ -1,32 +1,32 @@
-#include<list.h>
+#include"list.h"
 #include<stdio.h>
 #include"fatal.h"
+#include<stdlib.h>
 #define  ElementType int
 struct Node
 {
     ElementType Element;
     Position Next;
-}
+};
 /*创建一个空表*/
-List MakeEmpty(List L)
+List MakeEmpty()
 {
-    if(L!= NULL)
-        DeleteList(L);
+    List L;
     L = malloc(sizeof(struct Node));
-  if(L == NULL)
+    if(L == NULL)
         FataError("Can't create a List");
     return L;
 }
 /*返回一个空表*/
 int IsEmpty(List L)
 {
-    return L->next == NULL;
+    return L->Next == NULL;
 }
 
 /*测试当前位置是否为链表的末尾*/
 int IsLast(Position P, List L)
 {
-    return P->next == NULL;
+    return P->Next == NULL;
 }
 
 /*找到元素x的位置*/
@@ -37,7 +37,6 @@ Position Find(ElementType X, List L)
     P = L->Next;
     while(P != NULL && P->Element != X)
         P = P->Next;
-
     return P;
 }
 
@@ -48,7 +47,7 @@ void Delete(ElementType X, List L)
 
     P= FindPrevious(X, L);
 
-    if(!IsLast(P. L))
+    if(!IsLast(P, L))
     {
         TmpCell = P->Next;
         P->Next = TmpCell->Next;
@@ -70,12 +69,12 @@ Position FindPrevious(ElementType X, List L)
 }
 
 /*链表的插入*/
-void Insert(Element X, List L, Position P)
+void Insert(ElementType X, List L, Position P)
 {
     Position TmpCell;
 
     TmpCell = malloc(sizeof(strut Node));
-    if（TmpCell == NULL）
+    if(TmpCell == NULL)
         FataError("Out of space!!");
 
     TmpCell->Element = X;

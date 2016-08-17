@@ -3,10 +3,10 @@ typedef int ElementType;
 #define _List_H
 struct Node;
 typedef struct Node *PtrToNode;
-typedef struct PtrToNode List;
-typedef struct PtrToNode Position;
+typedef PtrToNode List;
+typedef PtrToNode Position;
 
-List MakeEmpty(List L);
+List MakeEmpty();
 int IsEmpty(List L);
 int IsLast(Position P, List L);
 Position Find(ElementType X,List L);
@@ -17,7 +17,7 @@ void DeleteList(List L);
 Position Header(List L);
 Position First(List L);
 Position Advance(Position P);
-ELementType Retrieve(Position P);
+ElementType Retrieve(Position P);
 
 #endif
 

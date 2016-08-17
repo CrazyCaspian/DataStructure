@@ -5,9 +5,10 @@
 
 void main()
 {
-    List EmptyList;
-    L = MakeEmpty(EmptyList);
-    Position TemCell = L;
+    List L;
+    L = MakeEmpty();
+    Position CuruntP = L;
+    Position TemCell;
     int i, num;
     srand(time(NULL));
     for(i=0;i<10;i++)
