@@ -13,7 +13,7 @@ List MakeEmpty(List L)
     if(L!= NULL)
         DeleteList(L);
     L = malloc(sizeof(struct Node));
-    if(L == NULL)
+  if(L == NULL)
         FataError("Can't create a List");
     return L;
 }
