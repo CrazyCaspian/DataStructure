@@ -21,12 +21,26 @@ void main()
        TemCell = malloc(sizeof(struct Node));
        if(TemCell == NULL)
            FatalError("OUt of space!");
-       printf("The Cur is %p \n",CuruntP);
+      // printf("The Cur is %p \n",CuruntP);
        CuruntP->Next = TemCell;
        TemCell->Element = rand()%100+1;
        TemCell->Next = NULL;
        CuruntP = TemCell;
-       printf("The element in %p is %d \n",CuruntP,CuruntP->Element);
+     //  printf("The element in %p is %d \n",CuruntP,CuruntP->Element);
     }
+    ShowList(L);
+    printf("Let's delete one element,please input a element in list \n");
+    int x;
+    scanf("%d",&x );
+    Delete(x, L);
+    ShowList(L);
+    printf("Let's find one element,please input a element in list \n");
+    scanf("%d",&x );
+    Position des;
+    des = Find(x, L);
+    printf("Let's insert one element,please input a element in list \n");
+    scanf("%d", &x);
+    Insert(x, L, des);
+    ShowList(L);
 }
 

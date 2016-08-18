@@ -81,3 +81,14 @@ void Insert(ElementType X, List L, Position P)
     TmpCell->Next =  P->Next;
     P->Next = TmpCell;
 }
+
+/*打印表*/
+void ShowList(List L)
+{
+    while(L->Next != NULL)
+    {
+        printf("The element now is %d \n",L->Next->Element);
+        L = L->Next;
+    }
+    printf("Print finish!\n");
+}
